@@ -1,10 +1,16 @@
+import ThemeContext from '../Context/ThemeContext';
+import React, {useContext} from 'react';
 
-function Two(props) {
+function Two() {
+
+ const context = useContext(ThemeContext)
     return (
-      <div style = {{color: props.theme == 'dark' ? 'white' : 'green'}}>
+     <div style = {{color: context.theme === 'dark' ? 'white' : 'green'}}>
          Hi From Two <br/>
-         theme : {props.theme}
-      </div>
+         theme : {context.theme}
+      </div> 
+      
+     
     );
   }
   

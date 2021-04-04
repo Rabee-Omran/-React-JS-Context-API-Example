@@ -1,6 +1,7 @@
 import One from './components/One';
 import ToggleThemeButton from './components/ToggleThemeButton';
 import React, { Component } from 'react';
+import ThemeContext from './Context/ThemeContext';
 
 class App  extends Component{
 
@@ -19,11 +20,13 @@ class App  extends Component{
 
 render(){
   return (
-    <div style = {{background: this.state.theme == 'dark' ? 'green' : 'white'}}>
+    <ThemeContext.Provider value = {{'theme' : this.state.theme, 'toggleTheme' : this.toggleTheme }}>
+    <div style = {{background: this.state.theme === 'dark' ? 'green' : 'white'}}>
       Hi From App
-     <One theme = {this.state.theme}/>
-     <ToggleThemeButton toggleTheme = {this.toggleTheme}/>
+     <One/>
+     <ToggleThemeButton />
     </div>
+    </ThemeContext.Provider>
   );
 }}
 

@@ -1,10 +1,10 @@
 import Two from './Two';
 
-function One(props) {
+function One() {
     return (
       <div className="App">
        Hi From One
-       <Two theme = {props.theme}/>
+       <Two/>
       </div>
     );
   }
